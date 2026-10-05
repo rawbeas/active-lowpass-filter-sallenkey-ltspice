@@ -1,0 +1,16 @@
+* Sallen-Key LPF - Transient step response
+Vin in 0 PULSE(0 1 0.1m 1u 1u 5m 10m)
+
+R1 in a 11.3k
+R2 a b 11.3k
+C1 a out 20n
+C2 b 0 10n
+
+Eopamp out 0 b out 100000
+
+.control
+tran 1u 5m
+wrdata step_data.txt v(in) v(out)
+quit
+.endc
+.end
